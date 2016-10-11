@@ -9,20 +9,24 @@ var BUILD_DIR = path.resolve(__dirname);
 var APP_DIR = path.resolve(__dirname, 'dist');
 
 var config = {
-  entry: APP_DIR + '/app.jsx',
-  output: {
-    path: BUILD_DIR,
-    filename: 'bundle.js'
-  },
-  module : {
-    loaders : [
-      {
-        test : /\.jsx?/,
-        include : APP_DIR,
-        loader : 'babel'
-      }
-    ]
-  }
+	entry: __dirname + '/app.jsx',
+	output: {
+		path: BUILD_DIR,
+		filename: 'bundle.js'
+	},
+	devServer: {
+		inline: true,
+		port: 8080
+	},
+	module: {
+		loaders: [{
+			test: /\.jsx?/,
+			include: APP_DIR,
+			loader: 'babel',
+			query: {
+				"presets": ["es2015", "react"]
+			}
+		}]
+	}
 };
-
 module.exports = config;
