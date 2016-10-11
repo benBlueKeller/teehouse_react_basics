@@ -9,9 +9,9 @@ var BUILD_DIR = path.resolve(__dirname);
 var APP_DIR = path.resolve(__dirname, 'dist');
 
 var config = {
-	entry: __dirname + '/app.jsx',
+	entry: BUILD_DIR + '/app.jsx',
 	output: {
-		path: BUILD_DIR,
+		path: APP_DIR,
 		filename: 'bundle.js'
 	},
 	devServer: {
@@ -21,7 +21,7 @@ var config = {
 	module: {
 		loaders: [{
 			test: /\.jsx?/,
-			include: APP_DIR,
+			include: BUILD_DIR,
 			loader: 'babel',
 			query: {
 				"presets": ["es2015", "react"]
