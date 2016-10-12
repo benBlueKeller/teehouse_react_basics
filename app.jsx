@@ -1,19 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+/*import React from 'react';
+import ReactDOM from 'react-dom';*/
 
 var PLAYERS = [
   {
-    name: "Jim Hoskins",
+    name: 'Jim Hawkins',
     score: 31,
     id: 1,
   },
   {
-    name: "Andrew Chalkley",
+    name: 'Andrew Chalkley',
     score: 35,
     id: 2,
   },
   {
-    name: "Alena Holligan",
+    name: 'Alicia Cumputon',
     score: 42,
     id: 3,
   },
@@ -94,7 +94,7 @@ Application.propTypes = {
 };
 
 Application.defaultProps = {
-  title: "Scoreboard",
+  title: 'Scoreboard',
 }
 
 ReactDOM.render(<Application players={PLAYERS}/>, document.getElementById('container'));
