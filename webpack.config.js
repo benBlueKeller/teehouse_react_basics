@@ -24,7 +24,7 @@ var config = {
 			include: BUILD_DIR,
 			loader: 'babel',
 			query: {
-				"presets": ["es2015", "react"]
+				'presets': ['es2015', 'react']
 			}
 		}]
 	}
