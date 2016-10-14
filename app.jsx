@@ -34,18 +34,32 @@ Header.propTypes = {
 var Counter = React.createClass({
   propTypes: {},
   
+  /*getInitialState method is what React looks for to set state*/
   getInitialState: function() {
     return {
-      score: 0,
+      score: this.props.initialScore,
     }
   },
+
+  incrementScore: function(e) {
+    //call this.setState so react knows to rerender.
+    this.setState({
+      score: (this.state.score + 1)
+    })
+  },
   
+  decrementScore: function(e) {
+    this.setState({
+      score: (this.state.score - 1)
+    })
+  },
+
   render: function() {
     return (
       <div className="counter">
-        <button className="counter-action decrement"> - </button>
+        <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
         <div className="counter-score"> {this.state.score} </div>
-        <button className="counter-action increment"> + </button>
+        <button className="counter-action increment" onClick={this.incrementScore}> + </button>
       </div>
     );
   }
@@ -59,7 +73,8 @@ function Player(props) {
         {props.name}
       </div>
       <div className="player-score">
-        <Counter />
+        {/*in this case, player was passed in as props*/}
+        <Counter initialScore={props.score} />
       </div>
     </div>
   );
