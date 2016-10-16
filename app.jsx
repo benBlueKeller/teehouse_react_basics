@@ -216,11 +216,12 @@ function Player(props) {
   return (
     <div className="player">
       <div className="player-name">
+        <a className="remove-player" onClick={props.onRemove}>✖</a>
         {props.name}
       </div>
       <div className="player-score">
         {/*in this case, player was passed in as props*/}
-        <Counter initialScore={props.score} />
+        <Counter initialScore={props.score} onChange={props.onScoreChange} />
       </div>
     </div>
   );
@@ -229,6 +230,8 @@ function Player(props) {
 Player.propTypes = {
   name: React.PropTypes.string.isRequired,
   score: React.PropTypes.number.isRequired,
+  onScoreChange: React.PropTypes.func.isRequired,
+  onRemove: React.PropTypes.func.isRequired
 };
 
 function Application(props) {
