@@ -20,6 +20,9 @@ var PLAYERS = [
 ];
 var nextId = 4;
 
+/**
+ * Stopwatch is just that, it takes no props and handles all state (except Date) internally                      [description]
+ */
 var Stopwatch = React.createClass({
   getInitialState: function() {
     return {
@@ -300,4 +303,4 @@ var Application = React.createClass({
 });
 
 
-ReactDOM.render(<Application players={PLAYERS}/>, document.getElementById('container'));
+ReactDOM.render(<Application initialPlayers={PLAYERS}/>, document.getElementById('container'));
