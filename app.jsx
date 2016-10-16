@@ -65,6 +65,24 @@ var Counter = React.createClass({
   }
 });
 
+/**
+ * a stateless component for handling score
+ * @param {[type]} props [description]
+ */
+function Counter(props) {
+  return (
+      <div className="counter">
+        <button className="counter-action decrement" onClick={this.decrementScore}> - </button>
+        <div className="counter-score"> {props.score} </div>
+        <button className="counter-action increment" onClick={this.incrementScore}> + </button>
+      </div>
+    );
+}
+
+Counter.propTypes = {
+  score: React.PropTypes.number.isRequired
+}
+
 
 function Player(props) {
   return (
